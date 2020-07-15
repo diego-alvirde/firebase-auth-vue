@@ -1,10 +1,13 @@
 <template>
   <div>
-    <form>
-      <input type="text" placeholder="Usuario" />
-      <input type="password" placeholder="Contraseña" />
+    <form @submit.prevent="login">
+      <input v-model="usuario" type="text" placeholder="Usuario" />
+      <input v-model="contrasena" type="password" placeholder="Contraseña" />
       <input type="submit" value="Acceder" />
     </form>
+    <pre>
+      {{ $data }}
+    </pre>
   </div>
 </template>
 <script>
