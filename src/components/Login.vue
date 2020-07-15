@@ -27,7 +27,7 @@ export default {
         .auth()
         .signInWithEmailAndPassword(this.usuario, this.contrasena)
         .then(
-          (user) => console.log(user),
+          (user) => this.$router.replace("home"),
           (error) => (this.message = error.message)
         );
     },
