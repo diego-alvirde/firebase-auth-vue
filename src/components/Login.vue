@@ -18,6 +18,7 @@ export default {
     return {
       usuario: "",
       contrasena: "",
+      message: "",
     };
   },
   methods: {
@@ -26,8 +27,8 @@ export default {
         .auth()
         .signInWithEmailAndPassword(this.usuario, this.contrasena)
         .then(
-          (user) => alert("Usuario conectado " + user),
-          (error) => console.error(error)
+          (user) => console.log(user),
+          (error) => (this.message = error.message)
         );
     },
   },
